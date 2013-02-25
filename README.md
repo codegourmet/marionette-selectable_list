@@ -28,7 +28,7 @@ Add this to your `app/assets/javascripts/application.js`:
 
 Derive your view from `Backbone.Marionette.SelectableList.CompositeView` instead of CompositeView. The same goes for ItemView.
 
-The ItemView will listen to the 'click' event on it's item. If a click is caught, the item will have the CSS class 'selected' set and an event 'selectable:select' will get fired by the CompositeListView.
+The ItemView will listen to the `click` event on it's item. If a click is caught, the item will have the CSS class `selected` set and an event `selectable:select` will get fired by the CompositeListView.
 
 NOTE: setup the parameter `selectable` in ItemView explanation below to make sure that clicks on your items will get caught (also, see TODO at the bottom of this document).
 
@@ -36,23 +36,32 @@ NOTE: setup the parameter `selectable` in ItemView explanation below to make sur
 ### CompositeView attributes
 
 `itemView`: Set this to your own ItemView, which is expected to be derived from SelectableList.ItemView.
-`eventPrefix`: default: `selectable`. If this is set, it's value is used as event prefix.
+
+`eventPrefix`: default: 'selectable'. If this is set, it's value is used as event prefix.
 
 
 ### ItemView attributes
 
-`selectable`: default: `.item`. The selector used to identify the click element in your ItemView template.
-`selectedCssClass`: default: `selected`. The CSS class that will get set on select trigger.
-`isSelected`: default: `false`. Use this to preselect an item.
-`selectionMethod`: default: `setCssClass`. Use this if you want to do a custom action on select trigger.
+`selectable`: default: '.item'. The selector used to identify the click element in your ItemView template.
+
+`selectedCssClass`: default: 'selected'. The CSS class that will get set on select trigger.
+
+`isSelected`: default: 'false'. Use this to preselect an item.
+
+`selectionMethod`: default: 'setCssClass'. Use this if you want to do a custom action on select trigger.
 
 
 ### Triggering Selection
 
 The following methods of SelectableList.CompositeView can be used if you need to trigger selection programmatically:
 
+    // select by view
     onItemSelect(itemView);
+
+    // select by view's index
     selectByIndex(itemIndex);
+
+    // select by view's model
     selectByModel(model);
 
 
