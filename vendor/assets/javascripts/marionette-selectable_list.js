@@ -63,7 +63,7 @@ Backbone.Marionette.SelectableList.CompositeView = Backbone.Marionette.Composite
 
 	/** tells one item to highlight. deselects all other items. */
 	selectItem: function (itemView) {
-		_.each(this.children, function (view) {
+		this.children.each(function (view) {
 			view.setSelected((view == itemView));
 		});
 	},
@@ -77,7 +77,7 @@ Backbone.Marionette.SelectableList.CompositeView = Backbone.Marionette.Composite
 
 
 	selectByModel: function (model) {
-		_.each(this.children, function (childView) {
+		this.children.each(function (childView) {
 			if (childView.model == model) {
 				this.onItemSelect(childView);
 			}
