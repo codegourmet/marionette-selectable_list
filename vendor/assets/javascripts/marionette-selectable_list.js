@@ -82,6 +82,21 @@ Backbone.Marionette.SelectableList.CompositeView = Backbone.Marionette.Composite
 				this.onItemSelect(childView);
 			}
 		}, this);
+	},
+
+	// TODO: doc
+	getSelectedViews: function () {
+		return this.children.filter(function (childView) {
+			return childView.isSelected;
+		});
+	},
+
+
+	// TODO: doc
+	getSelectedModels: function () {
+		return this.getSelectedViews().map(function (childView) {
+			return childView.model;
+		});
 	}
 });
 
