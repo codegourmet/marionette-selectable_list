@@ -78,6 +78,7 @@ Also, if you're lazy: just add something to the TODOs via pull request.
 
 ## TODO
 
+- add multi-select feature
 - example
 - if ItemView property `item` is set to null, listen to clicks on the entire view's $el.
 - test `selectionMethod` param. This is assumed to work but not tested, due to time constraints.
